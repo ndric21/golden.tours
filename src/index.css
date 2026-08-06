@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-sand-50 text-ink-900 antialiased;
+    font-feature-settings: 'ss01' 1;
+  }
+  ::selection {
+    @apply bg-gold-300/60 text-ink-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-6 py-3 text-sm font-semibold text-ink-950 shadow-gold transition-all duration-300 hover:shadow-gold-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 bg-white px-6 py-3 text-sm font-semibold text-ink-800 transition-all duration-200 hover:border-gold-400 hover:text-gold-700 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-ink-600 transition-colors hover:bg-ink-100 hover:text-ink-900;
+  }
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-card;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 outline-none transition-colors focus:border-gold-400 focus:ring-4 focus:ring-gold-100;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+  .chip {
+    @apply cursor-pointer select-none rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-medium text-ink-700 transition-all hover:border-gold-400;
+  }
+  .chip-active {
+    @apply border-gold-500 bg-gold-50 text-gold-800 ring-1 ring-gold-300;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold-300/50 bg-ink-950/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300 backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-ink-200 rounded-full;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-gradient-gold {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+  }
+}
